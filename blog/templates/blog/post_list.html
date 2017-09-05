@@ -7,18 +7,13 @@
             <div>
                 <h1>Django Jump1556 Blog</h1>
             </div>
-            
 
-            <div>
-                <p>published: 02.09.2017, 20:00</p>
-                <h2><a href="">History of sport</a></h2>
-                <p>The statue is one of the earliest depictions of sport and is housed in the National Museum of Iraq. The origins of <strong>boxing</strong> have also been traced to ancient Sumer. The Epic of Gilgamesh gives one of the first historical records of sport with Gilgamesh engaging in a form of belt wrestling with Enkidu.</p>
-            </div>
-
-            <div>
-                <p>published: 02.09.2017, 21:00</p>
-                <h2><a href="">Long jump</a></h2>
-                <p>The long jump <em>(historically called the broad jump)</em> is a track and field event in which athletes combine <strong>speed, strength,</strong> and <strong> agility</strong> in an attempt to leap as far as possible from a take off point. Along with the <em>triple jump</em>, the two events that measure jumping for distance as a group are referred to as the <strong> "horizontal jumps"</strong>. This event has a history in the Ancient Olympic Games and has been a modern Olympic event for men since the first Olympics in 1896 and for women since 1948.</p>
-            </div>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
         </body>
     </html>
